@@ -37,8 +37,6 @@ int main(){
         thread_dispatch();
     }
 
-    __asm__ volatile ("li t3, 0x100000");
-    __asm__ volatile ("li t4, 0x5555");
-    __asm__ volatile ("sw t4, 0(t3)");
+    halt_qemu();
     return 0;
 }
