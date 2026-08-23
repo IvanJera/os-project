@@ -14,6 +14,12 @@ void wrapperMain(void* args) {
     userMain();
 }
 
+void _idle(void * a){
+    while(true){
+        Thread::dispatch();
+    }
+}
+
 int main(){
     Riscv::w_stvec((uint64) &Riscv::supervisorTrap);
 
